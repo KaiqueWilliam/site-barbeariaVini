@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VN Barber Barbearia | Itapuã, Salvador - BA</title>
+  <meta name="description" content="VN Barber Barbearia em Itapuã, Salvador. Cortes, barba e produtos para elevar seu estilo e autoestima desde 2020. Agende seu horário online." />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="business.business" />
+  <meta property="og:title" content="VN Barber Barbearia" />
+  <meta property="og:description" content="Elevando estilo e autoestima desde 2020. R. da Ilha, 576-674, Itapuã, Salvador - BA." />
+  <meta property="og:image" content="assets/og-image.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            barber: {
+              black: '#0a0a0a',
+              charcoal: '#161616',
+              gold: '#ffffff',
+              goldsoft: '#d9d9d9',
+              cream: '#f2f2f2',
+            },
+            neonblue: '#ffffff',
+            neongreen: '#ffffff',
+          },
+          fontFamily: {
+            display: ['"Bebas Neue"', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="bg-barber-black text-barber-cream font-body antialiased">
+
+  <!-- ============ HEADER ============ -->
+  <header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-24">
+      <a href="#inicio" class="flex items-center gap-3 shrink-0">
+        <img src="assets/logo.png" alt="VN Barber Barbearia" class="h-20 w-20 sm:h-24 sm:w-24 object-contain"
+             onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';" />
+        <span id="logo-fallback" style="display:none" class="items-center gap-2">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="text-barber-gold">
+            <path d="M6 3L18 21M18 3L6 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="6" cy="3" r="1.8" fill="currentColor"/>
+            <circle cx="18" cy="3" r="1.8" fill="currentColor"/>
+            <circle cx="6" cy="21" r="1.8" fill="currentColor"/>
+            <circle cx="18" cy="21" r="1.8" fill="currentColor"/>
+          </svg>
+          <span class="font-display text-2xl tracking-wider leading-none">VN <span class="text-barber-gold">BARBER</span></span>
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+        <a href="#inicio" class="nav-link">Início</a>
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#loja" class="nav-link">Loja</a>
+        <a href="#localizacao" class="nav-link">Localização</a>
+      </nav>
+
+      <a href="https://topsalao.com?id=143763" target="_blank" rel="noopener"
+         class="hidden md:inline-flex items-center gap-2 bg-barber-gold text-barber-black font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-barber-goldsoft transition-colors">
+        Agendar horário
+      </a>
+
+      <!-- Mobile toggle -->
+      <button id="menu-btn" aria-label="Abrir menu" class="md:hidden text-barber-cream p-2">
+        <svg id="icon-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg id="icon-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="hidden"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-barber-charcoal border-t border-white/10 px-5 pb-6 pt-2">
+      <nav class="flex flex-col gap-4 text-base font-medium">
+        <a href="#inicio" class="mobile-link">Início</a>
+        <a href="#sobre" class="mobile-link">Sobre</a>
+        <a href="#servicos" class="mobile-link">Serviços</a>
+        <a href="#loja" class="mobile-link">Loja</a>
+        <a href="#localizacao" class="mobile-link">Localização</a>
+        <a href="https://topsalao.com?id=143763" target="_blank" rel="noopener"
+           class="mt-2 inline-flex justify-center bg-barber-gold text-barber-black font-semibold px-5 py-3 rounded-full">
+          Agendar horário
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section id="inicio" class="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden barber-hero">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 relative w-full">
+      <div class="max-w-3xl reveal">
+        <span class="inline-flex items-center gap-2 text-barber-gold text-xs font-semibold tracking-[0.2em] uppercase border border-barber-gold/40 rounded-full px-4 py-1.5">
+          VN Barber Barbearia · Itapuã, Salvador
+        </span>
+
+        <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[0.95] mt-6">
+          Elevando seu <span class="text-barber-gold">estilo</span>.<br />
+          Elevando sua <span class="text-barber-gold">autoestima</span>.
+        </h1>
+
+        <p class="mt-6 text-lg text-barber-cream/75 max-w-xl">
+          Desde 2020 cuidando do visual e da confiança de quem senta na nossa cadeira.
+          Cortes precisos, barba impecável e um atendimento que você vai querer repetir.
+        </p>
+
+        <div class="mt-9 flex flex-wrap gap-4">
+          <a href="https://topsalao.com?id=143763" target="_blank" rel="noopener"
+             class="btn-gold">
+            Agendar meu horário
+          </a>
+          <a href="#servicos" class="inline-flex items-center gap-2 border border-white/20 hover:border-barber-gold hover:text-barber-gold transition-colors px-7 py-3.5 rounded-full font-semibold text-sm">
+            Ver serviços
+          </a>
+        </div>
+
+        <div class="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-sm text-barber-cream/60">
+          <span class="flex items-center gap-2">📅 Desde 2020</span>
+          <span class="flex items-center gap-2">📍 Itapuã, Salvador - BA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE ============ -->
+  <section id="sobre" class="py-24 sm:py-28">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="reveal">
+        <span class="section-tag">Nossa história</span>
+        <h2 class="font-display text-4xl sm:text-5xl mt-4">Mais que um corte,<br/>uma experiência.</h2>
+        <p class="mt-6 text-barber-cream/75 leading-relaxed">
+          A VN Barber nasceu em 2020, no coração de Itapuã, com um propósito simples:
+          elevar o estilo e a autoestima de cada cliente que senta em nossa cadeira.
+          Ao longo desses anos, construímos uma comunidade de mais de 2 mil pessoas que
+          confiam no nosso trabalho — dentro e fora da barbearia.
+        </p>
+        <p class="mt-4 text-barber-cream/75 leading-relaxed">
+          Aqui você encontra técnica apurada, produtos de qualidade e um ambiente pensado
+          para o seu conforto. Seja para o dia a dia ou para ocasiões especiais, você sai
+          daqui pronto pra qualquer situação.
+        </p>
+
+        <div class="mt-10 grid grid-cols-2 gap-6 max-w-md">
+          <div>
+            <p class="font-display text-3xl text-barber-gold">2020</p>
+            <p class="text-xs text-barber-cream/60 mt-1 uppercase tracking-wide">Fundação</p>
+          </div>
+          <div>
+            <p class="font-display text-3xl text-barber-gold">Seg–Sáb</p>
+            <p class="text-xs text-barber-cream/60 mt-1 uppercase tracking-wide">Atendimento</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="photo-frame aspect-[4/5]">
+          <img src="assets/sobre/ambiente.jpg" alt="Ambiente da VN Barber Barbearia" loading="lazy"
+               onerror="this.style.opacity=0" class="w-full h-full object-cover" />
+          <div class="photo-fallback">
+            <span class="text-5xl">✂️</span>
+            <span class="text-xs mt-3 text-barber-cream/50 tracking-wide">Foto do ambiente — assets/sobre/ambiente.jpg</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVIÇOS ============ -->
+  <section id="servicos" class="py-24 sm:py-28 bg-barber-charcoal">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="section-tag">O que fazemos</span>
+        <h2 class="font-display text-4xl sm:text-5xl mt-4">Nossos serviços</h2>
+        <p class="mt-4 text-barber-cream/70">Técnica, precisão e acabamento em cada detalhe do seu visual.</p>
+      </div>
+
+      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Corte -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3L18 21M18 3L6 21" stroke-linecap="round"/><circle cx="6" cy="3" r="1.8"/><circle cx="18" cy="3" r="1.8"/><circle cx="6" cy="21" r="1.8"/><circle cx="18" cy="21" r="1.8"/></svg>
+          </div>
+          <h3 class="font-semibold text-lg mt-5">Corte</h3>
+          <p class="text-sm text-barber-cream/65 mt-2 leading-relaxed">Cortes modernos e clássicos, sempre alinhados às tendências e ao seu estilo pessoal.</p>
+          <p class="mt-5 font-display text-2xl text-barber-gold">R$ XX,XX</p>
+        </div>
+
+        <!-- Barba -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l8 6 8-6M6 9c0 6 1 11 6 11s6-5 6-11"/></svg>
+          </div>
+          <h3 class="font-semibold text-lg mt-5">Barba</h3>
+          <p class="text-sm text-barber-cream/65 mt-2 leading-relaxed">Modelagem, hidratação e acabamento na navalha para uma barba sempre no ponto.</p>
+          <p class="mt-5 font-display text-2xl text-barber-gold">R$ XX,XX</p>
+        </div>
+
+        <!-- Sobrancelha -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 15c3-5 6-6 9-6s6 1 9 6"/></svg>
+          </div>
+          <h3 class="font-semibold text-lg mt-5">Sobrancelha</h3>
+          <p class="text-sm text-barber-cream/65 mt-2 leading-relaxed">Design com navalha ou pinça para destacar o olhar sem perder a naturalidade.</p>
+          <p class="mt-5 font-display text-2xl text-barber-gold">R$ XX,XX</p>
+        </div>
+
+        <!-- Acabamento -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+          <h3 class="font-semibold text-lg mt-5">Acabamento</h3>
+          <p class="text-sm text-barber-cream/65 mt-2 leading-relaxed">Retoque de contorno, nuca e acabamento pra manter o visual em dia entre um corte e outro.</p>
+          <p class="mt-5 font-display text-2xl text-barber-gold">R$ XX,XX</p>
+        </div>
+      </div>
+
+      <p class="text-center text-xs text-barber-cream/40 mt-8">*Valores sujeitos a confirmação na barbearia ou pelo Instagram.</p>
+
+      <div class="text-center mt-10">
+        <a href="https://topsalao.com?id=143763" target="_blank" rel="noopener" class="btn-gold">Agendar um serviço</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOJA / PRODUTOS ============ -->
+  <section id="loja" class="py-24 sm:py-28">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="section-tag">Loja VN Barber</span>
+        <h2 class="font-display text-4xl sm:text-5xl mt-4">Leve o cuidado da barbearia pra casa</h2>
+        <p class="mt-4 text-barber-cream/70">Produtos selecionados pra manter seu estilo em dia todos os dias.</p>
+      </div>
+
+      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Óleo para Barba -->
+        <div class="product-card reveal">
+          <div class="product-photo">
+            <img src="assets/produtos/oleo-fox.jpg" alt="Óleo para Barba Fox For Men 30ml" loading="lazy" onerror="this.style.opacity=0" />
+            <div class="product-fallback">🧴</div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-semibold text-lg">Óleo para Barba Fox For Men</h3>
+            <p class="text-xs text-barber-cream/50 mt-0.5">30ml</p>
+            <p class="text-sm text-barber-cream/70 mt-3 leading-relaxed">Sua barba merece o melhor! Deixe sua barba com aspecto saudável, macia e bem cuidada todos os dias.</p>
+            <ul class="mt-4 space-y-1.5 text-sm text-barber-cream/65">
+              <li>✔ Hidratar</li>
+              <li>✔ Alinhar</li>
+              <li>✔ Dar brilho aos fios</li>
+            </ul>
+            <div class="flex items-center justify-between mt-6">
+              <span class="font-display text-3xl text-barber-gold">R$ 35,00</span>
+              <a href="https://www.instagram.com/vn_barber68" target="_blank" rel="noopener" class="btn-outline-sm">Garantir</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pasta Premium -->
+        <div class="product-card reveal">
+          <div class="product-photo accent-green">
+            <img src="assets/produtos/pasta-premium.jpg" alt="Pasta Premium Fox For Men 150g" loading="lazy" onerror="this.style.opacity=0" />
+            <div class="product-fallback">🧴</div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-semibold text-lg">Pasta Premium Fox For Men</h3>
+            <p class="text-xs text-barber-cream/50 mt-0.5">Pomada modeladora à base de água · 150g</p>
+            <p class="text-sm text-barber-cream/70 mt-3 leading-relaxed">Estilo e fixação no ponto! Garanta já a sua e mantenha o cabelo alinhado todos os dias.</p>
+            <ul class="mt-4 space-y-1.5 text-sm text-barber-cream/65">
+              <li>✔ Fácil de aplicar</li>
+              <li>✔ Não resseca os fios</li>
+              <li>✔ Modela com naturalidade</li>
+              <li>✔ Sai facilmente na lavagem</li>
+            </ul>
+            <div class="flex items-center justify-between mt-6">
+              <span class="font-display text-3xl text-neongreen">R$ 30,00</span>
+              <a href="https://www.instagram.com/vn_barber68" target="_blank" rel="noopener" class="btn-outline-sm">Garantir</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Creme Modelador Efeito Teia -->
+        <div class="product-card reveal">
+          <div class="product-photo accent-blue">
+            <img src="assets/produtos/creme-teia.jpg" alt="Creme Modelador Efeito Teia Fox For Men 150g" loading="lazy" onerror="this.style.opacity=0" />
+            <div class="product-fallback">🧴</div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-semibold text-lg">Creme Modelador Efeito Teia</h3>
+            <p class="text-xs text-barber-cream/50 mt-0.5">Fox For Men · 150g</p>
+            <p class="text-sm text-barber-cream/70 mt-3 leading-relaxed">Seu cabelo alinhado, estiloso e com aquele efeito natural o dia todo!</p>
+            <ul class="mt-4 space-y-1.5 text-sm text-barber-cream/65">
+              <li>✔ Fixação suave</li>
+              <li>✔ Hidratação dos fios</li>
+              <li>✔ Efeito teia incrível</li>
+              <li>✔ 150g de qualidade</li>
+            </ul>
+            <div class="flex items-center justify-between mt-6">
+              <span class="font-display text-3xl text-neonblue">R$ 30,00</span>
+              <a href="https://www.instagram.com/vn_barber68" target="_blank" rel="noopener" class="btn-outline-sm">Garantir</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bucha para Nudred -->
+        <div class="product-card reveal">
+          <div class="product-photo">
+            <img src="assets/produtos/bucha-nudred.jpg" alt="Bucha para Nudred" loading="lazy" onerror="this.style.opacity=0" />
+            <div class="product-fallback">🧽</div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-semibold text-lg">Bucha para Nudred</h3>
+            <p class="text-xs text-barber-cream/50 mt-0.5">Acessório profissional</p>
+            <p class="text-sm text-barber-cream/70 mt-3 leading-relaxed">O acessório perfeito para quem quer definição, estilo e aquele visual diferenciado!</p>
+            <ul class="mt-4 space-y-1.5 text-sm text-barber-cream/65">
+              <li>✔ Fácil de usar</li>
+              <li>✔ Ideal para formação dos twists</li>
+              <li>✔ Resultado rápido e prático</li>
+              <li>✔ Qualidade profissional</li>
+            </ul>
+            <div class="flex items-center justify-between mt-6">
+              <span class="font-display text-3xl text-barber-gold">R$ 30,00</span>
+              <a href="https://www.instagram.com/vn_barber68" target="_blank" rel="noopener" class="btn-outline-sm">Garantir</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Kit Combo — banner de destaque -->
+      <div class="mt-8 promo-banner reveal">
+        <div class="promo-banner-inner">
+          <div class="promo-photo">
+            <img src="assets/produtos/kit-combo.jpg" alt="Kit Fox Creme + Bucha Nudred" loading="lazy" onerror="this.style.opacity=0" />
+            <div class="product-fallback">🎁</div>
+          </div>
+          <div class="promo-content">
+            <span class="promo-badge-inline">🔥 Promoção exclusiva</span>
+            <h3 class="font-display text-3xl sm:text-4xl mt-4">Kit Fox Creme + Bucha Nudred</h3>
+            <p class="text-sm text-barber-cream/70 mt-3 max-w-md leading-relaxed">Para fixar o estilo e alinhar o visual! Garanta já o kit completo com desconto exclusivo.</p>
+            <div class="flex items-center gap-4 mt-6">
+              <span class="text-base text-barber-cream/40 line-through">R$ 60,00</span>
+              <span class="font-display text-4xl text-barber-gold">R$ 50,00</span>
+            </div>
+            <a href="https://www.instagram.com/vn_barber68" target="_blank" rel="noopener" class="btn-gold mt-6 self-start">Garantir kit com desconto</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOCALIZAÇÃO E HORÁRIOS ============ -->
+  <section id="localizacao" class="py-24 sm:py-28 bg-barber-charcoal">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-start">
+      <div class="reveal">
+        <span class="section-tag">Onde estamos</span>
+        <h2 class="font-display text-4xl sm:text-5xl mt-4">Localização e horários</h2>
+
+        <div class="mt-8 flex gap-4">
+          <span class="text-2xl leading-none">📍</span>
+          <p class="text-barber-cream/75 leading-relaxed">
+            R. da Ilha, 576-674<br/>
+            Itapuã, Salvador - BA · CEP 41620-620
+          </p>
+        </div>
+
+        <div class="mt-8 border border-white/10 rounded-2xl overflow-hidden">
+          <table class="w-full text-sm">
+            <tbody>
+              <tr class="border-b border-white/10">
+                <td class="px-5 py-4 text-barber-cream/60">Segunda a Quinta</td>
+                <td class="px-5 py-4 text-right font-semibold">09:00 às 19:00</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="px-5 py-4 text-barber-cream/60">Sexta e Sábado</td>
+                <td class="px-5 py-4 text-right font-semibold">09:00 às 20:00</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-4 text-barber-cream/60">Domingo</td>
+                <td class="px-5 py-4 text-right font-semibold text-barber-cream/40">Fechado</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="https://www.google.com/maps/search/?api=1&query=R.+da+Ilha+576%2C+Itapu%C3%A3+Salvador+Bahia" target="_blank" rel="noopener" class="btn-gold">Como chegar</a>
+          <a href="https://www.instagram.com/vn_barber68" target="_blank" rel="noopener" class="inline-flex items-center gap-2 border border-white/20 hover:border-barber-gold hover:text-barber-gold transition-colors px-7 py-3.5 rounded-full font-semibold text-sm">
+            Falar no Instagram
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="rounded-2xl overflow-hidden border border-white/10 aspect-[4/3]">
+          <!-- Substituir a query abaixo pelo endereço exato assim que o número for confirmado -->
+          <iframe
+            title="Localização VN Barber Barbearia"
+            src="https://www.google.com/maps?q=R.+da+Ilha+576,+Itapu%C3%A3,+Salvador,+Bahia,+41620-620&output=embed"
+            class="w-full h-full grayscale contrast-125 invert-[0.92]"
+            style="border:0;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-black pt-16 pb-8 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div class="flex items-center">
+        <img src="assets/logo.png" alt="VN Barber Barbearia" class="h-28 sm:h-32 w-auto object-contain"
+             onerror="this.style.display='none'; document.getElementById('logo-fallback-footer').style.display='inline';" />
+        <span id="logo-fallback-footer" style="display:none" class="font-display text-2xl tracking-wider">VN <span class="text-barber-gold">BARBER</span></span>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-sm uppercase tracking-wide text-barber-cream/80">Navegação</h4>
+        <ul class="mt-4 space-y-2 text-sm text-barber-cream/55">
+          <li><a href="#inicio" class="hover:text-barber-gold transition-colors">Início</a></li>
+          <li><a href="#sobre" class="hover:text-barber-gold transition-colors">Sobre</a></li>
+          <li><a href="#servicos" class="hover:text-barber-gold transition-colors">Serviços</a></li>
+          <li><a href="#loja" class="hover:text-barber-gold transition-colors">Loja</a></li>
+          <li><a href="#localizacao" class="hover:text-barber-gold transition-colors">Localização</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-sm uppercase tracking-wide text-barber-cream/80">Contato</h4>
+        <ul class="mt-4 space-y-2 text-sm text-barber-cream/55">
+          <li>R. da Ilha, 576-674 - Itapuã, Salvador - BA</li>
+          <li>CEP 41620-620</li>
+          <li><a href="https://www.instagram.com/vn_barber68" target="_blank" rel="noopener" class="hover:text-barber-gold transition-colors">@vn_barber68</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-sm uppercase tracking-wide text-barber-cream/80">Horários</h4>
+        <ul class="mt-4 space-y-2 text-sm text-barber-cream/55">
+          <li>Seg a Qui: 09h às 19h</li>
+          <li>Sex e Sáb: 09h às 20h</li>
+          <li>Domingo: fechado</li>
+        </ul>
+        <a href="https://topsalao.com?id=143763" target="_blank" rel="noopener" class="inline-flex mt-4 bg-barber-gold text-barber-black font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-barber-goldsoft transition-colors">
+          Agendar horário
+        </a>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-3 justify-between text-xs text-barber-cream/40">
+      <p>© <span id="year"></span> VN Barber Barbearia. Todos os direitos reservados.</p>
+      <p>R. da Ilha, 576-674 - Itapuã, Salvador - BA</p>
+    </div>
+  </footer>
+
+  <!-- Floating CTA -->
+  <a href="https://topsalao.com?id=143763" target="_blank" rel="noopener" id="floating-cta" aria-label="Agendar horário" class="floating-cta">
+    📅
+  </a>
+
+  <!-- Back to top -->
+  <button id="back-to-top" aria-label="Voltar ao topo" class="back-to-top">
+    ↑
+  </button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

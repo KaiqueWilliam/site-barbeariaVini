@@ -1,0 +1,330 @@
+/* VN Barber Barbearia — estilos complementares ao Tailwind (CDN) */
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 88px;
+}
+
+::selection {
+  background: #ffffff;
+  color: #0a0a0a;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 999px;
+}
+
+:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* ---------- Header ---------- */
+#site-header {
+  background: transparent;
+}
+#site-header.scrolled {
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.nav-link {
+  position: relative;
+  color: rgba(246, 241, 231, 0.75);
+  transition: color 0.2s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.25s ease;
+}
+.nav-link:hover {
+  color: #f2f2f2;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.mobile-link {
+  color: rgba(246, 241, 231, 0.85);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ---------- Buttons ---------- */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  color: #0a0a0a;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.9rem 1.9rem;
+  border-radius: 999px;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 24px -8px rgba(255, 255, 255, 0.55);
+}
+.btn-gold:hover {
+  background: #d9d9d9;
+  transform: translateY(-2px);
+}
+
+.btn-outline-sm {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #f2f2f2;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  white-space: nowrap;
+}
+.btn-outline-sm:hover {
+  border-color: #ffffff;
+  color: #0a0a0a;
+  background-color: #ffffff;
+}
+
+/* ---------- Section tag ---------- */
+.section-tag {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ---------- Hero background ---------- */
+.barber-hero {
+  background: radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.12), transparent 55%),
+    #0a0a0a;
+}
+
+/* ---------- Reveal on scroll ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Service cards ---------- */
+.service-card {
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.service-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Product cards ---------- */
+.product-card {
+  background: #161616;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.1rem;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.product-photo {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(160deg, #1f1f1f, #0a0a0a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.product-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: opacity 0.3s ease;
+}
+.product-fallback {
+  font-size: 2.75rem;
+  opacity: 0.35;
+}
+.product-photo.accent-blue {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), #0a0a0a);
+}
+.product-photo.accent-green {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), #0a0a0a);
+}
+
+/* ---------- Promo banner (kit combo) ---------- */
+.promo-banner {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: linear-gradient(120deg, #1a1a1a, #101010);
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+.promo-banner-inner {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .promo-banner-inner {
+    flex-direction: row;
+  }
+}
+
+.promo-photo {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), #0a0a0a);
+}
+@media (min-width: 768px) {
+  .promo-photo {
+    width: 340px;
+    aspect-ratio: auto;
+    flex-shrink: 0;
+  }
+}
+.promo-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.promo-badge-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #ffffff;
+  color: #0a0a0a;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.promo-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+/* ---------- About photo frame ---------- */
+.photo-frame {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(160deg, #1f1f1f, #0a0a0a);
+}
+.photo-frame img {
+  position: absolute;
+  inset: 0;
+}
+.photo-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+/* ---------- Floating CTA & back to top ---------- */
+.floating-cta {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 10px 28px -6px rgba(255, 255, 255, 0.6);
+  z-index: 40;
+  transition: transform 0.2s ease;
+}
+.floating-cta:hover {
+  transform: scale(1.08);
+}
+
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 5.25rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
