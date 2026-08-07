@@ -67,4 +67,29 @@ document.addEventListener('DOMContentLoaded', () => {
   backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+  // Carrossel de cortes (setas)
+  const cortesTrack = document.getElementById('cortes-track');
+  const cortesPrev = document.getElementById('cortes-prev');
+  const cortesNext = document.getElementById('cortes-next');
+
+  if (cortesTrack && cortesPrev && cortesNext) {
+    const scrollByCard = (direction) => {
+      const card = cortesTrack.querySelector('.gallery-item');
+      const step = card ? card.getBoundingClientRect().width + 16 : cortesTrack.clientWidth * 0.8;
+      cortesTrack.scrollBy({ left: direction * step, behavior: 'smooth' });
+    };
+
+    cortesPrev.addEventListener('click', () => scrollByCard(-1));
+    cortesNext.addEventListener('click', () => scrollByCard(1));
+
+    const updateArrows = () => {
+      const maxScroll = cortesTrack.scrollWidth - cortesTrack.clientWidth;
+      cortesPrev.disabled = cortesTrack.scrollLeft <= 4;
+      cortesNext.disabled = cortesTrack.scrollLeft >= maxScroll - 4;
+    };
+    updateArrows();
+    cortesTrack.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+  }
 });

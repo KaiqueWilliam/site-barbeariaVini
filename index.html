@@ -14,7 +14,7 @@
   <meta property="og:image" content="assets/og-image.jpg" />
 
   <!-- Favicon -->
-  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="icon" href="assets/icon-logo/favicon.png" type="image/png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -54,9 +54,9 @@
 
   <!-- ============ HEADER ============ -->
   <header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-28">
       <a href="#inicio" class="flex items-center gap-3 shrink-0">
-        <img src="assets/logo.png" alt="VN Barber Barbearia" class="h-20 w-20 sm:h-24 sm:w-24 object-contain"
+        <img src="assets/icon-logo/logo.png" alt="VN Barber Barbearia" class="h-24 w-24 sm:h-28 sm:w-28 object-contain"
              onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';" />
         <span id="logo-fallback" style="display:none" class="items-center gap-2">
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="text-barber-gold">
@@ -74,6 +74,7 @@
         <a href="#inicio" class="nav-link">Início</a>
         <a href="#sobre" class="nav-link">Sobre</a>
         <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#cortes" class="nav-link">Cortes</a>
         <a href="#loja" class="nav-link">Loja</a>
         <a href="#localizacao" class="nav-link">Localização</a>
       </nav>
@@ -96,6 +97,7 @@
         <a href="#inicio" class="mobile-link">Início</a>
         <a href="#sobre" class="mobile-link">Sobre</a>
         <a href="#servicos" class="mobile-link">Serviços</a>
+        <a href="#cortes" class="mobile-link">Cortes</a>
         <a href="#loja" class="mobile-link">Loja</a>
         <a href="#localizacao" class="mobile-link">Localização</a>
         <a href="https://topsalao.com?id=143763" target="_blank" rel="noopener"
@@ -107,19 +109,27 @@
   </header>
 
   <!-- ============ HERO ============ -->
-  <section id="inicio" class="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden barber-hero">
+  <section id="inicio" class="relative min-h-screen flex items-center pt-32 pb-16 overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <img src="assets/ambiente-img/fachada.jpg" alt="" aria-hidden="true" loading="eager"
+           class="w-full h-full object-cover object-[center_20%] hero-bg-img"
+           onerror="this.style.display='none'" />
+      <div class="absolute inset-0 hero-overlay"></div>
+    </div>
+
     <div class="max-w-7xl mx-auto px-5 sm:px-8 relative w-full">
       <div class="max-w-3xl reveal">
-        <span class="inline-flex items-center gap-2 text-barber-gold text-xs font-semibold tracking-[0.2em] uppercase border border-barber-gold/40 rounded-full px-4 py-1.5">
-          VN Barber Barbearia · Itapuã, Salvador
-        </span>
+        <div class="flex items-center gap-3">
+          <span class="h-px w-10 bg-barber-gold/50"></span>
+          <span class="text-barber-gold text-xs font-semibold tracking-[0.25em] uppercase">VN Barber Barbearia</span>
+        </div>
 
         <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[0.95] mt-6">
           Elevando seu <span class="text-barber-gold">estilo</span>.<br />
           Elevando sua <span class="text-barber-gold">autoestima</span>.
         </h1>
 
-        <p class="mt-6 text-lg text-barber-cream/75 max-w-xl">
+        <p class="mt-6 text-lg text-barber-cream/75 max-w-xl text-justify">
           Desde 2020 cuidando do visual e da confiança de quem senta na nossa cadeira.
           Cortes precisos, barba impecável e um atendimento que você vai querer repetir.
         </p>
@@ -130,13 +140,53 @@
             Agendar meu horário
           </a>
           <a href="#servicos" class="inline-flex items-center gap-2 border border-white/20 hover:border-barber-gold hover:text-barber-gold transition-colors px-7 py-3.5 rounded-full font-semibold text-sm">
-            Ver serviços
+            Ver serviços →
           </a>
         </div>
 
-        <div class="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-sm text-barber-cream/60">
-          <span class="flex items-center gap-2">📅 Desde 2020</span>
-          <span class="flex items-center gap-2">📍 Itapuã, Salvador - BA</span>
+        <div class="mt-12 pt-6 border-t border-white/10 flex flex-nowrap items-center gap-x-3 sm:gap-x-8 gap-y-3 text-[11px] sm:text-xs font-semibold tracking-normal sm:tracking-wide uppercase text-barber-cream/60">
+          <span class="flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+            <img src="assets/icon-logo/mapa.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6 object-contain shrink-0" />
+            Itapuã, Salvador - BA
+          </span>
+          <span class="flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+            <span class="text-barber-gold/50">◇</span>
+            Ambiente climatizado
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DESTAQUES ============ -->
+  <section class="relative border-y border-white/10 bg-barber-charcoal">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-10 grid grid-cols-2 lg:grid-cols-4 gap-8 items-start reveal">
+      <div class="flex items-center gap-3">
+        <span class="text-2xl">💈</span>
+        <div>
+          <p class="font-display text-2xl text-barber-gold leading-none">2020</p>
+          <p class="text-xs text-barber-cream/60 mt-1">Ano de fundação</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-2xl">👥</span>
+        <div>
+          <p class="font-display text-2xl text-barber-gold leading-none">+2 mil</p>
+          <p class="text-xs text-barber-cream/60 mt-1">Clientes que confiam na gente</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-2xl">📆</span>
+        <div>
+          <p class="font-display text-2xl text-barber-gold leading-none">Seg–Sáb</p>
+          <p class="text-xs text-barber-cream/60 mt-1">Agendamento fácil, sem complicação</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-2xl">🧴</span>
+        <div>
+          <p class="font-display text-2xl text-barber-gold leading-none">Loja própria</p>
+          <p class="text-xs text-barber-cream/60 mt-1">Produtos premium pra levar pra casa</p>
         </div>
       </div>
     </div>
@@ -148,13 +198,13 @@
       <div class="reveal">
         <span class="section-tag">Nossa história</span>
         <h2 class="font-display text-4xl sm:text-5xl mt-4">Mais que um corte,<br/>uma experiência.</h2>
-        <p class="mt-6 text-barber-cream/75 leading-relaxed">
+        <p class="mt-6 text-barber-cream/75 leading-relaxed text-justify">
           A VN Barber nasceu em 2020, no coração de Itapuã, com um propósito simples:
           elevar o estilo e a autoestima de cada cliente que senta em nossa cadeira.
           Ao longo desses anos, construímos uma comunidade de mais de 2 mil pessoas que
           confiam no nosso trabalho — dentro e fora da barbearia.
         </p>
-        <p class="mt-4 text-barber-cream/75 leading-relaxed">
+        <p class="mt-4 text-barber-cream/75 leading-relaxed text-justify">
           Aqui você encontra técnica apurada, produtos de qualidade e um ambiente pensado
           para o seu conforto. Seja para o dia a dia ou para ocasiões especiais, você sai
           daqui pronto pra qualquer situação.
@@ -174,11 +224,11 @@
 
       <div class="reveal">
         <div class="photo-frame aspect-[4/5]">
-          <img src="assets/sobre/ambiente.jpg" alt="Ambiente da VN Barber Barbearia" loading="lazy"
-               onerror="this.style.opacity=0" class="w-full h-full object-cover" />
+          <img src="assets/ambiente-img/fachada.jpg" alt="Fachada da VN Barber Barbearia em Itapuã, Salvador" loading="lazy"
+               onerror="this.style.opacity=0" class="w-full h-full object-cover object-top" />
           <div class="photo-fallback">
             <span class="text-5xl">✂️</span>
-            <span class="text-xs mt-3 text-barber-cream/50 tracking-wide">Foto do ambiente — assets/sobre/ambiente.jpg</span>
+            <span class="text-xs mt-3 text-barber-cream/50 tracking-wide">Foto da fachada — assets/ambiente-img/fachada.jpg</span>
           </div>
         </div>
       </div>
@@ -194,52 +244,157 @@
         <p class="mt-4 text-barber-cream/70">Técnica, precisão e acabamento em cada detalhe do seu visual.</p>
       </div>
 
-      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Corte -->
-        <div class="service-card reveal">
-          <div class="service-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3L18 21M18 3L6 21" stroke-linecap="round"/><circle cx="6" cy="3" r="1.8"/><circle cx="18" cy="3" r="1.8"/><circle cx="6" cy="21" r="1.8"/><circle cx="18" cy="21" r="1.8"/></svg>
+      <div class="mt-16 grid lg:grid-cols-2 gap-10">
+        <div class="reveal">
+          <h3 class="font-display text-2xl text-barber-gold mb-4">Serviços individuais</h3>
+          <div class="border border-white/10 rounded-2xl overflow-hidden">
+            <table class="w-full text-sm">
+              <tbody>
+                <tr class="border-b border-white/10">
+                  <td class="px-5 py-4 text-barber-cream/80">Corte Máquina</td>
+                  <td class="px-5 py-4 text-right font-semibold text-barber-gold whitespace-nowrap">R$ 25,00</td>
+                </tr>
+                <tr class="border-b border-white/10">
+                  <td class="px-5 py-4 text-barber-cream/80">Corte Navalhado</td>
+                  <td class="px-5 py-4 text-right font-semibold text-barber-gold whitespace-nowrap">R$ 30,00</td>
+                </tr>
+                <tr class="border-b border-white/10">
+                  <td class="px-5 py-4 text-barber-cream/80">Corte Tesoura</td>
+                  <td class="px-5 py-4 text-right font-semibold text-barber-gold whitespace-nowrap">R$ 35,00</td>
+                </tr>
+                <tr class="border-b border-white/10">
+                  <td class="px-5 py-4 text-barber-cream/80">Barba</td>
+                  <td class="px-5 py-4 text-right font-semibold text-barber-gold whitespace-nowrap">R$ 20,00</td>
+                </tr>
+                <tr class="border-b border-white/10">
+                  <td class="px-5 py-4 text-barber-cream/80">Pezinho</td>
+                  <td class="px-5 py-4 text-right font-semibold text-barber-gold whitespace-nowrap">R$ 13,00</td>
+                </tr>
+                <tr class="border-b border-white/10">
+                  <td class="px-5 py-4 text-barber-cream/80">Sobrancelha (masc/fem)</td>
+                  <td class="px-5 py-4 text-right font-semibold text-barber-gold whitespace-nowrap">R$ 10,00</td>
+                </tr>
+                <tr>
+                  <td class="px-5 py-4 text-barber-cream/80">Pigmentação</td>
+                  <td class="px-5 py-4 text-right font-semibold text-barber-gold whitespace-nowrap">R$ 15,00</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <h3 class="font-semibold text-lg mt-5">Corte</h3>
-          <p class="text-sm text-barber-cream/65 mt-2 leading-relaxed">Cortes modernos e clássicos, sempre alinhados às tendências e ao seu estilo pessoal.</p>
-          <p class="mt-5 font-display text-2xl text-barber-gold">R$ XX,XX</p>
         </div>
 
-        <!-- Barba -->
-        <div class="service-card reveal">
-          <div class="service-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l8 6 8-6M6 9c0 6 1 11 6 11s6-5 6-11"/></svg>
+        <div class="reveal">
+          <h3 class="font-display text-2xl text-barber-gold mb-4">Combos</h3>
+          <div class="border border-white/10 rounded-2xl overflow-hidden">
+            <table class="w-full text-sm">
+              <tbody>
+                <tr class="border-b border-white/10">
+                  <td class="px-5 py-4 text-barber-cream/80">Corte Máq + Tesoura</td>
+                  <td class="px-5 py-4 text-right font-semibold text-barber-gold whitespace-nowrap">R$ 30,00</td>
+                </tr>
+                <tr class="border-b border-white/10">
+                  <td class="px-5 py-4 text-barber-cream/80">Corte Navalhado + Tesoura</td>
+                  <td class="px-5 py-4 text-right font-semibold text-barber-gold whitespace-nowrap">R$ 35,00</td>
+                </tr>
+                <tr class="border-b border-white/10">
+                  <td class="px-5 py-4 text-barber-cream/80">Corte Máq + Barba + Sobrancelha</td>
+                  <td class="px-5 py-4 text-right font-semibold text-barber-gold whitespace-nowrap">R$ 45,00</td>
+                </tr>
+                <tr class="border-b border-white/10">
+                  <td class="px-5 py-4 text-barber-cream/80">Corte Navalhado + Barba + Sobrancelha</td>
+                  <td class="px-5 py-4 text-right font-semibold text-barber-gold whitespace-nowrap">R$ 50,00</td>
+                </tr>
+                <tr class="border-b border-white/10">
+                  <td class="px-5 py-4 text-barber-cream/80">Corte Navalhado + Pigmentação + Sobrancelha</td>
+                  <td class="px-5 py-4 text-right font-semibold text-barber-gold whitespace-nowrap">R$ 45,00</td>
+                </tr>
+                <tr class="border-b border-white/10">
+                  <td class="px-5 py-4 text-barber-cream/80">Corte Máq + Pigmentação + Sobrancelha</td>
+                  <td class="px-5 py-4 text-right font-semibold text-barber-gold whitespace-nowrap">R$ 40,00</td>
+                </tr>
+                <tr class="border-b border-white/10">
+                  <td class="px-5 py-4 text-barber-cream/80">Luzes + Corte</td>
+                  <td class="px-5 py-4 text-right font-semibold text-barber-gold whitespace-nowrap">R$ 90,00</td>
+                </tr>
+                <tr class="border-b border-white/10">
+                  <td class="px-5 py-4 text-barber-cream/80">Reflexo + Corte</td>
+                  <td class="px-5 py-4 text-right font-semibold text-barber-gold whitespace-nowrap">R$ 110,00</td>
+                </tr>
+                <tr class="border-b border-white/10">
+                  <td class="px-5 py-4 text-barber-cream/80">Platinado + Corte</td>
+                  <td class="px-5 py-4 text-right font-semibold text-barber-gold whitespace-nowrap">R$ 120,00</td>
+                </tr>
+                <tr>
+                  <td class="px-5 py-4 text-barber-cream/80">Pezinho + Barba</td>
+                  <td class="px-5 py-4 text-right font-semibold text-barber-gold whitespace-nowrap">R$ 30,00</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <h3 class="font-semibold text-lg mt-5">Barba</h3>
-          <p class="text-sm text-barber-cream/65 mt-2 leading-relaxed">Modelagem, hidratação e acabamento na navalha para uma barba sempre no ponto.</p>
-          <p class="mt-5 font-display text-2xl text-barber-gold">R$ XX,XX</p>
-        </div>
-
-        <!-- Sobrancelha -->
-        <div class="service-card reveal">
-          <div class="service-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 15c3-5 6-6 9-6s6 1 9 6"/></svg>
-          </div>
-          <h3 class="font-semibold text-lg mt-5">Sobrancelha</h3>
-          <p class="text-sm text-barber-cream/65 mt-2 leading-relaxed">Design com navalha ou pinça para destacar o olhar sem perder a naturalidade.</p>
-          <p class="mt-5 font-display text-2xl text-barber-gold">R$ XX,XX</p>
-        </div>
-
-        <!-- Acabamento -->
-        <div class="service-card reveal">
-          <div class="service-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </div>
-          <h3 class="font-semibold text-lg mt-5">Acabamento</h3>
-          <p class="text-sm text-barber-cream/65 mt-2 leading-relaxed">Retoque de contorno, nuca e acabamento pra manter o visual em dia entre um corte e outro.</p>
-          <p class="mt-5 font-display text-2xl text-barber-gold">R$ XX,XX</p>
         </div>
       </div>
 
-      <p class="text-center text-xs text-barber-cream/40 mt-8">*Valores sujeitos a confirmação na barbearia ou pelo Instagram.</p>
+      
 
       <div class="text-center mt-10">
         <a href="https://topsalao.com?id=143763" target="_blank" rel="noopener" class="btn-gold">Agendar um serviço</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CORTES / PORTFÓLIO ============ -->
+  <section id="cortes" class="py-24 sm:py-28">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="section-tag">Nosso trabalho</span>
+        <h2 class="font-display text-4xl sm:text-5xl mt-4">Cortes que já saíram daqui</h2>
+        <p class="mt-4 text-barber-cream/70">Um pouco do que a gente faz por semana na cadeira da VN Barber.</p>
+      </div>
+
+      <div class="mt-16 gallery-carousel reveal">
+        <button id="cortes-prev" type="button" aria-label="Ver fotos anteriores" class="gallery-arrow gallery-arrow-prev">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button id="cortes-next" type="button" aria-label="Ver próximas fotos" class="gallery-arrow gallery-arrow-next">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+
+        <div id="cortes-track" class="gallery-track">
+          <div class="gallery-item">
+            <img src="assets/cortes/corte-01.jpg" alt="Corte realizado na VN Barber" loading="lazy" onerror="this.style.opacity=0" />
+            <div class="gallery-fallback">✂️</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/cortes/corte-02.jpg" alt="Corte realizado na VN Barber" loading="lazy" onerror="this.style.opacity=0" />
+            <div class="gallery-fallback">✂️</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/cortes/corte-03.jpg" alt="Corte realizado na VN Barber" loading="lazy" onerror="this.style.opacity=0" />
+            <div class="gallery-fallback">✂️</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/cortes/corte-04.jpg" alt="Corte realizado na VN Barber" loading="lazy" onerror="this.style.opacity=0" />
+            <div class="gallery-fallback">✂️</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/cortes/corte-05.jpg" alt="Corte realizado na VN Barber" loading="lazy" onerror="this.style.opacity=0" />
+            <div class="gallery-fallback">✂️</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/cortes/corte-06.jpg" alt="Corte realizado na VN Barber" loading="lazy" onerror="this.style.opacity=0" />
+            <div class="gallery-fallback">✂️</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/cortes/corte-07.jpg" alt="Corte realizado na VN Barber" loading="lazy" onerror="this.style.opacity=0" />
+            <div class="gallery-fallback">✂️</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="https://www.instagram.com/vn_barber68" target="_blank" rel="noopener" class="inline-flex items-center gap-2 border border-white/20 hover:border-barber-gold hover:text-barber-gold transition-colors px-7 py-3.5 rounded-full font-semibold text-sm">
+          Ver mais no Instagram
+        </a>
       </div>
     </div>
   </section>
@@ -261,16 +416,16 @@
             <img src="assets/produtos/oleo-fox.jpg" alt="Óleo para Barba Fox For Men 30ml" loading="lazy" onerror="this.style.opacity=0" />
             <div class="product-fallback">🧴</div>
           </div>
-          <div class="p-6">
+          <div class="p-6 flex flex-col flex-1">
             <h3 class="font-semibold text-lg">Óleo para Barba Fox For Men</h3>
             <p class="text-xs text-barber-cream/50 mt-0.5">30ml</p>
-            <p class="text-sm text-barber-cream/70 mt-3 leading-relaxed">Sua barba merece o melhor! Deixe sua barba com aspecto saudável, macia e bem cuidada todos os dias.</p>
+            <p class="text-sm text-barber-cream/70 mt-3 leading-relaxed text-justify">Sua barba merece o melhor! Deixe sua barba com aspecto saudável, macia e bem cuidada todos os dias.</p>
             <ul class="mt-4 space-y-1.5 text-sm text-barber-cream/65">
               <li>✔ Hidratar</li>
               <li>✔ Alinhar</li>
               <li>✔ Dar brilho aos fios</li>
             </ul>
-            <div class="flex items-center justify-between mt-6">
+            <div class="flex items-center justify-between pt-6 mt-auto">
               <span class="font-display text-3xl text-barber-gold">R$ 35,00</span>
               <a href="https://www.instagram.com/vn_barber68" target="_blank" rel="noopener" class="btn-outline-sm">Garantir</a>
             </div>
@@ -283,17 +438,17 @@
             <img src="assets/produtos/pasta-premium.jpg" alt="Pasta Premium Fox For Men 150g" loading="lazy" onerror="this.style.opacity=0" />
             <div class="product-fallback">🧴</div>
           </div>
-          <div class="p-6">
+          <div class="p-6 flex flex-col flex-1">
             <h3 class="font-semibold text-lg">Pasta Premium Fox For Men</h3>
             <p class="text-xs text-barber-cream/50 mt-0.5">Pomada modeladora à base de água · 150g</p>
-            <p class="text-sm text-barber-cream/70 mt-3 leading-relaxed">Estilo e fixação no ponto! Garanta já a sua e mantenha o cabelo alinhado todos os dias.</p>
+            <p class="text-sm text-barber-cream/70 mt-3 leading-relaxed text-justify">Estilo e fixação no ponto! Garanta já a sua e mantenha o cabelo alinhado todos os dias.</p>
             <ul class="mt-4 space-y-1.5 text-sm text-barber-cream/65">
               <li>✔ Fácil de aplicar</li>
               <li>✔ Não resseca os fios</li>
               <li>✔ Modela com naturalidade</li>
               <li>✔ Sai facilmente na lavagem</li>
             </ul>
-            <div class="flex items-center justify-between mt-6">
+            <div class="flex items-center justify-between pt-6 mt-auto">
               <span class="font-display text-3xl text-neongreen">R$ 30,00</span>
               <a href="https://www.instagram.com/vn_barber68" target="_blank" rel="noopener" class="btn-outline-sm">Garantir</a>
             </div>
@@ -306,17 +461,17 @@
             <img src="assets/produtos/creme-teia.jpg" alt="Creme Modelador Efeito Teia Fox For Men 150g" loading="lazy" onerror="this.style.opacity=0" />
             <div class="product-fallback">🧴</div>
           </div>
-          <div class="p-6">
+          <div class="p-6 flex flex-col flex-1">
             <h3 class="font-semibold text-lg">Creme Modelador Efeito Teia</h3>
             <p class="text-xs text-barber-cream/50 mt-0.5">Fox For Men · 150g</p>
-            <p class="text-sm text-barber-cream/70 mt-3 leading-relaxed">Seu cabelo alinhado, estiloso e com aquele efeito natural o dia todo!</p>
+            <p class="text-sm text-barber-cream/70 mt-3 leading-relaxed text-justify">Seu cabelo alinhado, estiloso e com aquele efeito natural o dia todo!</p>
             <ul class="mt-4 space-y-1.5 text-sm text-barber-cream/65">
               <li>✔ Fixação suave</li>
               <li>✔ Hidratação dos fios</li>
               <li>✔ Efeito teia incrível</li>
               <li>✔ 150g de qualidade</li>
             </ul>
-            <div class="flex items-center justify-between mt-6">
+            <div class="flex items-center justify-between pt-6 mt-auto">
               <span class="font-display text-3xl text-neonblue">R$ 30,00</span>
               <a href="https://www.instagram.com/vn_barber68" target="_blank" rel="noopener" class="btn-outline-sm">Garantir</a>
             </div>
@@ -329,17 +484,17 @@
             <img src="assets/produtos/bucha-nudred.jpg" alt="Bucha para Nudred" loading="lazy" onerror="this.style.opacity=0" />
             <div class="product-fallback">🧽</div>
           </div>
-          <div class="p-6">
+          <div class="p-6 flex flex-col flex-1">
             <h3 class="font-semibold text-lg">Bucha para Nudred</h3>
             <p class="text-xs text-barber-cream/50 mt-0.5">Acessório profissional</p>
-            <p class="text-sm text-barber-cream/70 mt-3 leading-relaxed">O acessório perfeito para quem quer definição, estilo e aquele visual diferenciado!</p>
+            <p class="text-sm text-barber-cream/70 mt-3 leading-relaxed text-justify">O acessório perfeito para quem quer definição, estilo e aquele visual diferenciado!</p>
             <ul class="mt-4 space-y-1.5 text-sm text-barber-cream/65">
               <li>✔ Fácil de usar</li>
               <li>✔ Ideal para formação dos twists</li>
               <li>✔ Resultado rápido e prático</li>
               <li>✔ Qualidade profissional</li>
             </ul>
-            <div class="flex items-center justify-between mt-6">
+            <div class="flex items-center justify-between pt-6 mt-auto">
               <span class="font-display text-3xl text-barber-gold">R$ 30,00</span>
               <a href="https://www.instagram.com/vn_barber68" target="_blank" rel="noopener" class="btn-outline-sm">Garantir</a>
             </div>
@@ -358,7 +513,7 @@
           <div class="promo-content">
             <span class="promo-badge-inline">🔥 Promoção exclusiva</span>
             <h3 class="font-display text-3xl sm:text-4xl mt-4">Kit Fox Creme + Bucha Nudred</h3>
-            <p class="text-sm text-barber-cream/70 mt-3 max-w-md leading-relaxed">Para fixar o estilo e alinhar o visual! Garanta já o kit completo com desconto exclusivo.</p>
+            <p class="text-sm text-barber-cream/70 mt-3 max-w-md leading-relaxed text-justify">Para fixar o estilo e alinhar o visual! Garanta já o kit completo com desconto exclusivo.</p>
             <div class="flex items-center gap-4 mt-6">
               <span class="text-base text-barber-cream/40 line-through">R$ 60,00</span>
               <span class="font-display text-4xl text-barber-gold">R$ 50,00</span>
@@ -378,7 +533,7 @@
         <h2 class="font-display text-4xl sm:text-5xl mt-4">Localização e horários</h2>
 
         <div class="mt-8 flex gap-4">
-          <span class="text-2xl leading-none">📍</span>
+          <img src="assets/icon-logo/mapa.png" alt="" class="w-7 h-7 object-contain shrink-0" />
           <p class="text-barber-cream/75 leading-relaxed">
             R. da Ilha, 576-674<br/>
             Itapuã, Salvador - BA · CEP 41620-620
@@ -428,11 +583,24 @@
     </div>
   </section>
 
+  <!-- ============ CTA FINAL ============ -->
+  <section class="relative py-20 sm:py-24 overflow-hidden cta-final">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center relative reveal">
+      <h2 class="font-display text-4xl sm:text-5xl">Pronto pra elevar seu estilo?</h2>
+      <p class="mt-4 text-barber-cream/70 max-w-xl mx-auto">
+        Marque seu horário agora e sinta a diferença de um corte feito com técnica, cuidado e atenção aos detalhes.
+      </p>
+      <a href="https://topsalao.com?id=143763" target="_blank" rel="noopener" class="btn-gold mt-8">
+        Agendar meu horário
+      </a>
+    </div>
+  </section>
+
   <!-- ============ FOOTER ============ -->
   <footer class="bg-black pt-16 pb-8 border-t border-white/10">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
       <div class="flex items-center">
-        <img src="assets/logo.png" alt="VN Barber Barbearia" class="h-28 sm:h-32 w-auto object-contain"
+        <img src="assets/icon-logo/logo.png" alt="VN Barber Barbearia" class="h-28 sm:h-32 w-auto object-contain"
              onerror="this.style.display='none'; document.getElementById('logo-fallback-footer').style.display='inline';" />
         <span id="logo-fallback-footer" style="display:none" class="font-display text-2xl tracking-wider">VN <span class="text-barber-gold">BARBER</span></span>
       </div>
@@ -443,6 +611,7 @@
           <li><a href="#inicio" class="hover:text-barber-gold transition-colors">Início</a></li>
           <li><a href="#sobre" class="hover:text-barber-gold transition-colors">Sobre</a></li>
           <li><a href="#servicos" class="hover:text-barber-gold transition-colors">Serviços</a></li>
+          <li><a href="#cortes" class="hover:text-barber-gold transition-colors">Cortes</a></li>
           <li><a href="#loja" class="hover:text-barber-gold transition-colors">Loja</a></li>
           <li><a href="#localizacao" class="hover:text-barber-gold transition-colors">Localização</a></li>
         </ul>
@@ -478,7 +647,7 @@
 
   <!-- Floating CTA -->
   <a href="https://topsalao.com?id=143763" target="_blank" rel="noopener" id="floating-cta" aria-label="Agendar horário" class="floating-cta">
-    📅
+    <img src="assets/icon-logo/favicon.png" alt="" class="w-12 h-12 object-contain" />
   </a>
 
   <!-- Back to top -->
